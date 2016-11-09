@@ -1,6 +1,8 @@
 # A-LOD Component
 For use with [A-Frame](https://aframe.io/)
 
+[Live Demo](https://mflux.github.io/aframe-lod/)
+
 Usage:
 Include the script after a-frame
     

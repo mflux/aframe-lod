@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LOD Example</title>
+    <script type="text/javascript" src="thirdparty/aframe.js"></script>
+    <script type="text/javascript" src="aframe-lod.js"></script>
+  </head>
+  <body>
+
+    <a-scene>
+
+      <a-sky color="#ECECEC"></a-sky>
+
+      <a-lod position="0 1.25 -5">
+        <a-sphere lod-level="0" radius="1.25" segments-width="64" segments-height="42" material="color: red; wireframe: true"></a-sphere>
+        <a-sphere lod-level="3" radius="1.25" segments-width="36" segments-height="18" material="color: red; wireframe: true"></a-sphere>
+        <a-sphere lod-level="5" radius="1.25" segments-width="24" segments-height="9" material="color: red; wireframe: true"></a-sphere>
+        <a-sphere lod-level="8" radius="1.25" segments-width="12" segments-height="6" material="color: red; wireframe: true"></a-sphere>
+      </a-lod>
+
+    </a-scene>
+
+  </body>
+</html>

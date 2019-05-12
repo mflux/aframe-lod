@@ -9,15 +9,16 @@
   AFRAME.registerComponent('lod', {
     init: function(){
       const lod = this.lod = new THREE.LOD();
-      Array.from( this.el.children ).forEach( function( childElement ){
-        childElement.addEventListener( 'loaded', function(){
+      const lodElem = this.el;
+      lodElem.addEventListener( 'loaded', function() {
+        Array.from( lodElem.children ).forEach( function( childElement ){
           const lodLevelComponent = childElement.components[ 'lod-level' ];
           if( lodLevelComponent !== undefined ){
             lod.addLevel( childElement.object3D, lodLevelComponent.data );
           }
         });
       });
-      this.el.setObject3D( 'lod', lod );
+      lodElem.setObject3D( 'lod', lod );
     },
     tick: function(){
       if( this.el.sceneEl.camera ){
